@@ -8,7 +8,7 @@ public class ProfessionalListener implements UpdateListener {
 	@Override
 	public void update(EventBean[] arg0, EventBean[] arg1) {
 
-		int eventTime = Simulation.simulationTime+EventGenerator.planEvent();
+		int eventTime = Simulation.getSimulationTime()+EventGenerator.planEvent();
 		Housebreaking housebreaking = (Housebreaking) arg0[0].getUnderlying();
 		Simulation.addToLocationMap(housebreaking.getLocation());
 

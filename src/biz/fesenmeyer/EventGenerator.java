@@ -19,7 +19,7 @@ public class EventGenerator {
 	    		generateMoneyJewelryStolen(), 
 	    		generateMobileStolen(), 
 	    		generateOtherThingsStolen(), location);
-		System.out.println("Tag "+Simulation.simulationTime + ": "
+		System.out.println("Tag "+Simulation.getSimulationTime() + ": "
 	    					+housebreaking);
 		cepRT.sendEvent(housebreaking);
 	}
@@ -60,7 +60,7 @@ public class EventGenerator {
 		if(generateRandomInt(1, 10) > 6){
 			Arrest arrest = new Arrest(location);
 			System.out.println("Verhaftung in "+ location);
-			Simulation.cepRT.sendEvent(arrest);
+			Simulation.getCepRT().sendEvent(arrest);
 		}
 	}
 	

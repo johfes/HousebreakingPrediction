@@ -21,12 +21,24 @@ public class Simulation {
 	/**
 	 * Future Event List.
 	 */
-	public static final SortedMap<Integer, ArrayList<String>> FEL = new TreeMap<>();
-	public static final HashMap<String, Integer> LOCATION_MAP = new HashMap<>();
-	public static int simulationTime = 0;
-	public static int simulationDurance;
-	public static EPRuntime cepRT;
+	private static final SortedMap<Integer, ArrayList<String>> FEL = new TreeMap<>();
+	private static final HashMap<String, Integer> LOCATION_MAP = new HashMap<>();
+	private static int simulationTime = 0;
+	private static int simulationDurance;
+	private static EPRuntime cepRT;
 	
+	public static SortedMap<Integer, ArrayList<String>> getFel() {
+		return FEL;
+	}
+
+	public static int getSimulationTime() {
+		return simulationTime;
+	}
+
+	public static EPRuntime getCepRT() {
+		return cepRT;
+	}
+
 	public static void main(String[] args) {
 		initCEP();
 
@@ -138,6 +150,21 @@ public class Simulation {
   	  } else{
 		  FEL.remove(key);
   	  }
+	}
+	
+	public static Integer getTimeOfHousebreaking(String area, SortedMap<Integer, ArrayList<String>> map){
+	    for(Entry<Integer, ArrayList<String>> entry : map.entrySet()) {
+	    	  Integer time = entry.getKey();
+	    	  if(time != simulationTime){
+		    	  ArrayList<String> events = entry.getValue();
+		    	  for(String event : events){
+		    		  if(area.equalsIgnoreCase(event)){
+		    			  return time;
+		    		  }
+		    	  }    	
+	    	  } 
+	    }
+	    return null;
 	}
 	
 }
