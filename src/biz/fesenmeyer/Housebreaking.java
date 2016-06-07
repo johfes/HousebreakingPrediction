@@ -1,12 +1,12 @@
 package biz.fesenmeyer;
 
 public class Housebreaking {
-	 boolean doorKickedIn;
-	 boolean moneyStolen;
-	 boolean jewelryStolen;
-	 boolean mobileStolen;
-	 boolean otherThingsStolen;
-	 String location;
+	 private boolean doorKickedIn;
+	 private boolean moneyStolen;
+	 private boolean jewelryStolen;
+	 private boolean mobileStolen;
+	 private boolean otherThingsStolen;
+	 private String location;
 	 
 	public Housebreaking(boolean doorKickedIn, boolean moneyStolen,
 			boolean jewelryStolen, boolean mobileStolen,
